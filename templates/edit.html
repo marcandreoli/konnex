@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit Contacts
+{% endblock %}
+
+{% block main %}
+
+    <h2>View Contact</h2>
+{% for i in contact_info %}
+
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item"><p>First: </p>{{ i['first_name'] }}</li>
+        <li class="list-group-item"><p>Last: </p> {{ i['last_name'] }}</li>
+        <li class="list-group-item"><p>Email: </p>{{ i['email'] }}</li>
+        <li class="list-group-item"><p>Phone: </p>{{ i['phone'] }}</li>
+        <li class="list-group-item"><p>School: </p>{{ i['school'] }}</li>
+        <li class="list-group-item"><p>Company: </p>{{ i['company'] }}</li>
+        <li class="list-group-item"><p>Street Address: </p>{{ i['street_address'] }}</li>
+        <li class="list-group-item"><p>Category: </p>{{ i['category'] }}</li>
+        <li class="list-group-item"><p>Notes: </p>{{ i['notes'] }}</li>
+    </ul>
+
+{% endfor %}
+
+{% endblock %}

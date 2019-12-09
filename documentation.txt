@@ -1,0 +1,18 @@
+Requirements:
+cs50
+Flask
+Flask-Session
+requests
+
+host-name: fed3161c-bd58-4172-b5aa-56d95f3c55f4-ide.cs50.xyz
+
+
+API to use: type this in terminal:
+
+1) cd project
+
+2) Type in terminal: export API_KEY=pk_dc3bc26c9f2348afa50573fc17af5f67
+
+3) Type in terminal: flask run
+
+4) Follow the URL

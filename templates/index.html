@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<link href="/static/styles.css" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+    Contacts
+{% endblock %}
+
+{% block main %}
+ <h2>Current Contacts</h2>
+
+
+        <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>First</th>
+            <th>Last</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Category</th>
+            <th>Favorite</th>
+            <th></th>
+        </tr>
+        </thead>
+        {% for contact in contacts %}
+            <tr>
+                <td><form action='/edit' method='post'><button type="submit" name='email' id='clickable' value="{{ contact['email'] }}">{{ contact['first_name'] }}</button></form></td>
+                <td><form action='/edit' method='post'><button type="submit" name='email' id='clickable' value="{{ contact['email'] }}">{{ contact['last_name'] }}</button></form></td>
+                <td><form action='/edit' method='post'><button type="submit" name='email' id='clickable' value="{{ contact['email'] }}">{{ contact['email'] }}</button></form></td>
+                <td><form action='/edit' method='post'><button type="submit" name='email' id='clickable' value="{{ contact['email'] }}">{{ contact['phone'] }}</button></form></td>
+                <td><form action='/edit' method='post'><button type="submit" name='email' id='clickable' value="{{ contact['email'] }}">{{ contact['category'] }}</button></form></td>
+                <td><form action='/edit' method='post'><button type="submit" name='email' id='clickable' value="{{ contact['email'] }}">{{ contact['favorite'] }}</button></form></td>
+                <td>
+                     <form action="/delete" method="post">
+                        <input type="hidden" name="contact" value="{{ contact['email'] }}"/>
+                        <button id="example_id" class="btn btn-outline-danger" type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+
+
